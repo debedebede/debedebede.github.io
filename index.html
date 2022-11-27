@@ -286,7 +286,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-27 14:43:45" itemprop="dateModified" datetime="2022-11-27T14:43:45+08:00">2022-11-27</time>
+                <time title="Modified: 2022-11-27 14:45:54" itemprop="dateModified" datetime="2022-11-27T14:45:54+08:00">2022-11-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -314,58 +314,14 @@
 
       
           <p>个人学习python的笔记，记录python知识点。</p>
-<p><code>&lt;!--more--&gt;</code></p>
-<h1 id="三引号"><a href="#三引号" class="headerlink" title="三引号"></a>三引号</h1><ol>
-<li>可用于代码的多行注释。</li>
-<li>可用于字符串的跨行，不必使用拼接符或换行符。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">This is multi-line comments.</span></span><br><span class="line"><span class="string">Code tells you how, </span></span><br><span class="line"><span class="string">comments should tell you why.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">var = <span class="string">&quot;&quot;&quot;This is the first line.</span></span><br><span class="line"><span class="string">This is the second line.</span></span><br><span class="line"><span class="string">&quot;What&#x27;s your name?&quot;</span></span><br><span class="line"><span class="string">&#x27;Bond, James Bond&#x27;&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(var) <span class="comment"># 上述句子将分四行输出到屏幕，双引号/单引号在三引号内都正常使用</span></span><br><span class="line"><span class="comment"># run &amp; ouput: </span></span><br><span class="line">This <span class="keyword">is</span> the first line.</span><br><span class="line">This <span class="keyword">is</span> the second line.</span><br><span class="line"><span class="string">&quot;What&#x27;s your name?&quot;</span></span><br><span class="line"><span class="string">&#x27;Bond, James Bond&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="import"><a href="#import" class="headerlink" title="import"></a>import</h1><ul>
-<li>import某个模块，当多次import同一个模块时，仅仅会在第一次import时，执行初始化。</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;a&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># main.py</span></span><br><span class="line"><span class="keyword">import</span> a		<span class="comment"># 打印&quot;a&quot;</span></span><br><span class="line"><span class="keyword">import</span> a		<span class="comment"># a模块已导入，跳过</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;main&quot;</span>)		<span class="comment"># 打印&quot;main&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># run main.py output</span></span><br><span class="line">a</span><br><span class="line">main</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># b.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;b&quot;</span>)</span><br><span class="line"><span class="comment"># a.py </span></span><br><span class="line"><span class="keyword">import</span> b</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;a&quot;</span>)</span><br><span class="line"><span class="comment"># main.py</span></span><br><span class="line"><span class="keyword">import</span> a		<span class="comment"># 导入a模块，a模块先导入b模块，所以先打印b，再打印a</span></span><br><span class="line"><span class="keyword">import</span> b		<span class="comment"># 发现b模块已导入，所以不再重复导入b模块</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;main&quot;</span>)		<span class="comment"># 打印main</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># run main.py output:</span></span><br><span class="line">b</span><br><span class="line">a</span><br><span class="line">main</span><br></pre></td></tr></table></figure>
-
-<h1 id="包与模块"><a href="#包与模块" class="headerlink" title="包与模块"></a>包与模块</h1><h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><ul>
-<li>一堆 xx.py + __init__.py 放在同一个文件夹下，该文件夹就组成了一个package</li>
-<li>package是为了便于组成程序。</li>
-</ul>
-<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ul>
-<li>一个 xx.py就是一个模块。</li>
-<li>一个模块里可以有类，函数，变量等属性。</li>
-<li>模块的__name__属性：<ul>
-<li>该属性可以用于标识该模块是直接运行还是被import的。</li>
-<li>如果是直接运行则__name__为__main__，如果是import的，模块的__name__为模块名。</li>
-</ul>
-</li>
-</ul>
-<h1 id="dir函数"><a href="#dir函数" class="headerlink" title="dir函数"></a>dir函数</h1><ul>
-<li>是python的内建函数。</li>
-<li>可以列出object所拥有的属性。<ul>
-<li>当object为模块时，列出该模块的类、函数、变量等属性名称。</li>
-</ul>
-</li>
-<li>dir()会列出当前模块的属性。</li>
-</ul>
-<h1 id="sys模块"><a href="#sys模块" class="headerlink" title="sys模块"></a>sys模块</h1><ul>
-<li>python的内建模块，python解释器与环境变量相关的信息。</li>
-<li>sys.argv<ul>
-<li>能够接收运行py程序时从命令行传入的参数。</li>
-<li><code>python a.py b c d</code></li>
-<li>sys.argv[0]为”a.py”,  sys.argv[1]为”b”，sys.argv[2]为”c”，sys.argv[3] 为”d”。</li>
-<li>sys.argv是一个字符串列表。</li>
-</ul>
-</li>
-<li>sys.path<ul>
-<li>是一个字符串列表。</li>
-<li>每个字符串都是一个路径。</li>
-<li>python解释器会在这些路径下寻找程序中所导入的模块。</li>
-</ul>
-</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/11/26/python%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

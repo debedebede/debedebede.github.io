@@ -274,10 +274,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-11-26 22:49:58 / Modified: 23:32:51" itemprop="dateCreated datePublished" datetime="2022-11-26T22:49:58+08:00">2022-11-26</time>
+              <time title="Created: 2022-11-26 22:49:58" itemprop="dateCreated datePublished" datetime="2022-11-26T22:49:58+08:00">2022-11-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-27 13:54:11" itemprop="dateModified" datetime="2022-11-27T13:54:11+08:00">2022-11-27</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -308,14 +314,18 @@
 <li>可用于字符串的跨行，不必使用拼接符或换行符。</li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">This is multi-line comments.</span></span><br><span class="line"><span class="string">Code tells you how, </span></span><br><span class="line"><span class="string">comments should tell you why.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">var = <span class="string">&quot;&quot;&quot;This is the first line.</span></span><br><span class="line"><span class="string">This is the second line.</span></span><br><span class="line"><span class="string">&quot;What&#x27;s your name?&quot;</span></span><br><span class="line"><span class="string">&#x27;Bond, James Bond&#x27;&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span>(var) <span class="comment"># 上述句子将分四行输出到屏幕，双引号/单引号在三引号内都正常使用</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/11/26/python%E7%AC%94%E8%AE%B0/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+
+<h1 id="import"><a href="#import" class="headerlink" title="import"></a>import</h1><ul>
+<li>import某个模块，当多次import同一个模块时，仅仅会在第一次import时，执行初始化。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># a.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;a&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># main.py</span></span><br><span class="line"><span class="keyword">import</span> a		<span class="comment"># 打印&quot;a&quot;</span></span><br><span class="line"><span class="keyword">import</span> a		<span class="comment"># a模块已导入，跳过</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;main&quot;</span>)		<span class="comment"># 打印&quot;main&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># run main.py output</span></span><br><span class="line">a</span><br><span class="line">main</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># b.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;b&quot;</span>)</span><br><span class="line"><span class="comment"># a.py </span></span><br><span class="line"><span class="keyword">import</span> b</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;a&quot;</span>)</span><br><span class="line"><span class="comment"># main.py</span></span><br><span class="line"><span class="keyword">import</span> a		<span class="comment"># 导入a模块，a模块先导入b模块，所以先打印b，再打印a</span></span><br><span class="line"><span class="keyword">import</span> b		<span class="comment"># 发现b模块已导入，所以不再重复导入b模块</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;main&quot;</span>)		<span class="comment"># 打印main</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># run main.py output:</span></span><br><span class="line">b</span><br><span class="line">a</span><br><span class="line">main</span><br></pre></td></tr></table></figure>
+
+
+
+<p><code>&lt;!--more--&gt;</code></p>
+
       
     </div>
 
